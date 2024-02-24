@@ -1,162 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>本間剣友会・本間道場</title>
+    <meta name="description" content="本間剣友会・本間道場" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./asset/css/sanitize.css" />
+    <link rel="stylesheet" href="./asset/css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>本間道場</title>
-    <meta name="description" content="sample test">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./asset/css/sanitize.css">
-    <link rel="stylesheet" href="./asset/css/style.css">
-</head>
-
-<body>
-
-
-    <section class="section">
-        <div class="title">
-            <div style="font-size: 70px; font-family: 'Shippori Mincho', serif;">本間道場</div>
-            <div class="title-right">
-                <div style="color: red;">見学・無料体験は、随時受付中！初心者大歓迎！<br></div>
-                <div style="color: blue; font-weight: bold;"> 宮ケ谷小学校体育館にて稽古<br></div>
-                土曜日 17:00～21:00／日曜日 9:00～12:00<br>
-                見学・入部希望者は「お問合せ」からお問合せください
+  <body class="fade">
+    <div class="container">
+      <div class="animation-container" id="animation-container"></div>
+      <div class="content" id="actual-content" style="display: none">
+        <section id="home_link">
+          <header>
+            <nav class="header-nav nav" id="js-nav">
+              <ul class="nav-items">
+                <li class="nav-items-item"><a href="#home_link">HOME</a></li>
+                <li class="nav-items-item"><a href="#date_link">稽古日・行事</a></li>
+                <li class="nav-items-item"><a href="#accese_link">アクセス</a></li>
+                <li class="nav-items-item"><a href="#inquiry_link">お問い合わせ</a></li>
+                <li class="nav-items-item" id="close-item"><a>閉じる</a></li>
+              </ul>
+            </nav>
+            <button class="header-hamburger hamburger" id="js-hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <div class="nav-header-honma">本間剣友会・本間道場</div>
+          </header>
+          <figcaption class="headerimage"><img src="asset/image/honmaFlag.png" /></figcaption>
+          <div class="header-honma">
+            <div class="header-left">
+              <figcaption class="honma-Logo"><img src="asset/image/honmaLogo.png" /></figcaption>
             </div>
-        </div>
-        <figcaption class="resizeimage"> <img src="https://placehold.jp/1500x600.png"> </figcaption>
-
-    </section>
-    <section class="subtitle">
-        <h1 class="section-headline">本間道場の道場訓</h1>
-        <div style="font-size: 20px;">
-            1.銃剣道や短剣道においては全国大会での個人、団体優勝経験がございます。<br>
-            2.武道は「礼に始まり礼に終わる」といった言葉があるように礼儀作法も学ぶことができます。<br>
-            3.<br>
-            4.<br>
-            5.<br>
-            6.<br>
-        </div>
-
-    </section>
-
-    <section class="section" style="text-align: center;">
-        <h1 class="section-headline">稽古日程・行事</h1>
-        <div style="font-size: 20px;">
-            土曜日:午後17時から午後20時まで<br>
-            日曜日:午前9時から午前12時まで
-        </div>
-        <div>
-            <iframe
-                src="
-                https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FTokyo&src=anVucGVpNzQ3NTM2QGdtYWlsLmNvbQ&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=amEuamFwYW5lc2UjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%2333B679&color=%230B8043"
-                style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-        </div>
-    </section>
-
-
-
-    <section class="section section-background">
-        <h1 class="section-headline">お問い合わせ</h1>
-        <form class="form" action="">
-            <table class="form-table">
-                <tr>
-                    <th>
-                        <label for="name">お名前</label>
-                    </th>
-                    <td>
-                        <input type="text" id="name" class="input">
-                    </td>
-
-                </tr>
-                <tr>
-                    <th>
-                        <label for="email">メールアドレス</label>
-                    </th>
-                    <td>
-                        <input type="email" id="email" class="input">
-                    </td>
-
-                </tr>
-                <tr>
-                    <th>
-                        <label for="title">件名</label>
-                    <td>
-                        <input type="text" id="title" class="input">
-                    </td>
-                    </th>
-                </tr>
-                <tr>
-                    <th>
-                        <label>内容</label>
-                    </th>
-                    <td>
-                        <textarea id="detail" cols="30" rows="10" class="textarea"></textarea>
-                    </td>
-
-                </tr>
-                <tr>
-                    <th>
-                        <label>剣道経験</label>
-                    <td>
-                        <select name="" id="experience" class="select">
-                            <option value="" selected>選択してください</option>
-                            <option value="0">あり</option>
-                            <option value="1">なし</option>
-                        </select>
-                    </td>
-                    </th>
-                </tr>
-                <tr>
-                    <th>
-                        <label>段級位</label>
-                    <td>
-                        <input type="text" id="level" class="input">
-                    </td>
-                    </th>
-                </tr>
-            </table>
-            <div class="form-button">
-                <a href="#">送信<i class="fas fa-angle-right fa-position-right"></i></a>
+            <div class="header-right">
+              <p class="red-text">見学・体験いつでも大歓迎!!</p>
+              <p class="blue-text">場所：横浜市立宮谷小学校(体育館)</p>
+              <p class="bule-small-text">「横浜駅」より徒歩15分</p>
+              <p class="bold-text">時間：土曜日 17:30~21:00/日曜日 9:00~12:00</p>
+              <p class="small-text">見学・入会希望者は「お問合せ」から連絡してください</p>
             </div>
-        </form>
-    </section>
-    <footer class="footer">
-        <div class="footer-title">アクセス</div>
-        <figure class="footer-map">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3249.5299855400463!2d139.6065521746745!3d35.46642887265742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185bf81fe2fa2d%3A0x2efa5e7bc91740d2!2z5qiq5rWc5biC56uL5a6u6LC35bCP5a2m5qCh!5e0!3m2!1sja!2sjp!4v1704359047665!5m2!1sja!2sjp"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <figcaption class="footer-mapinfo">
-                <div class="footer-maplogo">
-                    宮ケ谷小学校
-                </div>
-                <address class="footer-mapaddress">
-                    〒220-0006 神奈川県横浜市西区宮ケ谷６−７<br>
-                    <a href="https://maps.app.goo.gl/xPpPASw2yrXzMLts9" target="blank">Google Map</a>
-                </address>
-                <br>
-                <div>【電車】JR線横浜駅 西口 徒歩15分<br>
-                    【バス】「浅間下」下車 徒歩2分<br>
-                    ※宮ケ谷小学校の体育館をお借りして稽古しています</div>
+          </div>
+          <div class="home">
+            <div class="homeheader">
+              <p>本間剣友会・本間道場について</p>
+            </div>
+            <br />
+            <div class="homebody">
+              <div class="homeguide">
+                <ul>
+                  <li>剣道・銃剣道・短剣道と3種類の武道を稽古しています。</li>
+                  <li>銃剣道や短剣道においては全国大会での個人、団体優勝経験がございます。</li>
+                  <li>武道は「礼に始まり礼に終わる」といった言葉があるように礼儀作法も学ぶことができます。</li>
+                  <li>武道は生涯スポーツとも言われ未就学児から70代まで健康的に活動しております。</li>
+                  <li>日々の稽古の成果を大会で発揮出来るよう指導員も多く、多種多様に活動しております。</li>
+                  <li>年代、国籍も幅広いのでさまざまな方との交流を通して武道を学ぶことができます。</li>
+                </ul>
+              </div>
+              <figcaption class="homeimg"><img src="asset/image/honmaIdentity.jpg" /></figcaption>
+            </div>
+          </div>
+        </section>
+        <section class="calendar" style="text-align: center">
+          <h1 class="calendar-header" id="date_link">稽古日程・行事</h1>
+          <table border="1" align="center">
+            <tr>
+              <th>土曜日</th>
+              <th>PM 17:30〜21:00（稽古）</th>
+            </tr>
+            <tr>
+              <th>日曜日</th>
+              <th>AM 9:00〜12:00（稽古）</th>
+            </tr>
+          </table>
+          <div class="calendar-sub">
+            <ul>
+              <li>土曜日・日曜日のどちらか一方の参加でも可能です。</li>
+              <li>未就学児は参加時間帯のご相談をいたします。</li>
+            </ul>
+            <p>※不定期の休みや行事については下記カレンダーを参照</p>
+          </div>
+          <br />
+          <div class="google-cal">
+            <iframe src="https://calendar.google.com/calendar/embed?src=honma.doujyou%40gmail.com&ctz=Asia%2FTokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+          </div>
+        </section>
+
+        <section class="access" id="accese_link">
+          <br />
+          <div class="access-title">アクセス</div>
+          <figure class="access-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3249.5299855400463!2d139.6065521746745!3d35.46642887265742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185bf81fe2fa2d%3A0x2efa5e7bc91740d2!2z5qiq5rWc5biC56uL5a6u6LC35bCP5a2m5qCh!5e0!3m2!1sja!2sjp!4v1704359047665!5m2!1sja!2sjp" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <figcaption class="access-mapinfo">
+              <div class="access-maplogo">宮ケ谷小学校 (体育館)</div>
+              <address class="access-mapaddress">
+                〒220-0006 神奈川県横浜市西区宮ケ谷６−７<br />
+                <a href="https://maps.app.goo.gl/xPpPASw2yrXzMLts9" target="blank">Google Map</a>
+              </address>
+              <br />
+              <div>
+                【電車】JR線横浜駅 西口 徒歩15分<br />
+                【バス】「浅間下」下車 徒歩2分<br />
+                ※宮ケ谷小学校の体育館をお借りして稽古しています
+              </div>
             </figcaption>
+          </figure>
+        </section>
 
-        </figure>
-        <hr class="footer-line">
-        <small class="footer-copy">Copyright ©本間道場 </small>
-    </footer>
+        <section class="inquiry" id="inquiry_link">
+          <br />
+          <div class="inquiry-title">お問い合わせ</div>
+          <div class="inquiry-body">
+            <ul>
+              <li>見学・体験いつでも大歓迎！ご連絡お待ちしています。</li>
+              <li>下記お問い合わせボタンを押してメールしてください。</li>
+              <li>その他不明点等ありましたらお気軽にお問い合わせください。</li>
+            </ul>
+          </div>
+          <div style="padding-top: 10px">
+            <a href="mailto:honma.doujyou@gmail.com" class="form-button">お問い合わせ</a>
+          </div>
+        </section>
 
-
-
-
-
-
+        <hr class="access-line" />
+        <small class="access-copy">Copyright ©本間道場 </small>
+      </div>
+    </div>
     <script src="./asset/js/app.js"></script>
-</body>
-
+  </body>
 </html>

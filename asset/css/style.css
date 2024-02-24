@@ -2,196 +2,524 @@
 /*
 ベース
 */
-body{
-    font-family: 'Noto Sans JP', "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-    font-size: 15px;
-    line-height: 1.5;
-    color: #333;
+body {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333;
 }
-label, input, textarea, select, button {
-    cursor: pointer;
-}
-.resizeimage img { width: 100%; }
-/* タイトル */
-.title{
-    padding: 40px 15px;
-    display: flex;
-}
-.title-right{
-    position:absolute;
-    right:50px;
-    font-size: 20px;
-}
-/* 理念 */
-.subtitle{
-    background-color: #2c2c46;
-    color: #fff;
-    text-align: center;
-}
-/*
-section
-*/
-.section{
-    padding: 30px 15px;
-}
-.section-headline{
-    text-align: center;
-    font-size: 40px;
-    font-weight: bold;
-    margin: 0 0 40px;
+label,
+input,
+textarea,
+select,
+button {
+  cursor: pointer;
 }
 
-/*
-about
+/* ヘッダーの固定 */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* 道場旗を一番上に表示 */
+.headerimage {
+  padding-top: 50px;
+}
+.headerimage img {
+  width: 100%; /* 画像の幅を100%にする（親要素に合わせる） */
+  height: auto; /* アスペクト比を保つために自動調整 */
+}
+
+/* ハンバーガーメニュー */
+.header-hamburger {
+  width: 60px;
+  height: 100%;
+  float: right;
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+}
+.hamburger {
+  /*buttonタグデフォルトスタイルを打ち消し*/
+  background-color: transparent;
+  border-color: transparent;
+  z-index: 9999;
+}
+/* ハンバーガーメニューの線 */
+.hamburger span {
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  position: relative;
+  /*ハンバーガーメニュークリック時の三本線の動きを遅延*/
+  transition: ease 0.4s;
+  display: block;
+  text-align: right;
+}
+/* ハンバーガーメニューの幅を調節 */
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+.hamburger span:nth-child(2) {
+  margin: 8px 0;
+}
+.hamburger span:nth-child(3) {
+  top: 0;
+}
+/* ハンバーガーメニュークリック後のスタイル 
+   ３本線を✘表示にする*/
+.header-nav.active {
+  transform: translateX(0);
+}
+.hamburger.active span:nth-child(1) {
+  top: 5px;
+  transform: rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  top: -13px;
+  transform: rotate(-45deg);
+}
+/* ヘッダーのナビ部分 */
+.header-nav {
+  display: block;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  transform: translateX(100%);
+  /*ハンバーガーメニュークリック時のナビゲーションメニュー背景色*/
+  background-color: #365676;
+  /*ハンバーガーメニュークリック時のナビゲーションメニュー出現を遅延*/
+  transition: ease 0.4s;
+}
+/* ハンバーガーメニュークリック後のスタイル */
+.nav-items {
+  padding-top: 50px;
+}
+/* ナビのリンク */
+.nav-items-item a {
+  color: #fff;
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+.nav-items-item:last-child a {
+  margin-bottom: 0;
+}
+/* ヘッダーの道場名 */
+.nav-header-honma {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #0c2c4d;
+  color: #fff;
+  display: block;
+}
+.no-scroll {
+  overflow: hidden;
+}
+/* header */
+.header-link {
+  background-color: #0c2c4d;
+  text-align: center;
+  padding: 10px;
+  font-size: large;
+}
+header.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.header-link a {
+  color: #fff;
+}
+.header-link ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-link li {
+  display: inline;
+  margin-right: 20px;
+}
+.header-honma {
+  margin: 0 auto;
+  padding: 10px 0px 10px 100px;
+  overflow: hidden;
+  display: flex;
+  background-color: #fff;
+}
+.honma-Logo img {
+  height: auto; /* アスペクト比を保つために自動調整 */
+  width: 100%;
+}
+.header-left {
+  width: 50%;
+  margin-top: 25px;
+}
+.header-right {
+  width: 50%;
+}
+.red-text {
+  color: red;
+  font-size: 25px;
+  font-weight: bold;
+}
+.blue-text {
+  color: #365676;
+  font-size: 20px;
+  font-weight: bold;
+}
+.bule-small-text {
+  color: #365676;
+  font-size: 15px;
+}
+.bold-text {
+  font-weight: bold;
+  font-size: 15px;
+}
+.small-text {
+  font-size: 12px;
+}
+
+/* home */
+.home {
+  padding: 20px 40px;
+  background-color: #365676;
+  color: #fff;
+}
+.homeheader {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+.homebody {
+  display: flex;
+}
+.homeguide {
+  text-align: left;
+  font-size: 20px;
+  width: 70%;
+  height: auto;
+  background-color: #fff;
+  color: #000;
+}
+.homeguide ul {
+  width: fit-content;
+  margin: auto;
+}
+.homeguide li {
+  padding-top: 20px;
+}
+.homeimg {
+  width: 30%;
+}
+.homeimg img {
+  height: auto; /* アスペクト比を保つために自動調整 */
+  width: 100%;
+}
+/* 日程・行事 */
+.calendar {
+  padding: 0 0 40px 0;
+  text-align: center;
+}
+.calendar table {
+  width: 600px;
+}
+.calendar-header {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0 0 40px;
+  padding-top: 40px;
+}
+.calendar th {
+  font-size: 20px;
+  background-color: #ddffff;
+}
+.google-cal iframe {
+  width: 1000px;
+  height: 500px;
+}
+.calendar-sub {
+  font-size: 20px;
+  width: fit-content;
+  margin: auto;
+  text-align: left;
+}
+/* 
+access
 */
-.about{
-    margin: 0;
-    display: flex;
+.access {
+  background-color: #365676;
+  color: #fff;
+  padding-top: 20px;
 }
-.about-caption{
-    padding-left: 15px;
+.access-title {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
 }
-.about-headline{
-    margin: 0 0 20px;
-    font-size: 30px;
+.access-map {
+  margin: 0;
+  padding: 20px 15px 40px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.section-background{
-    background-color: #EEEEEE;
+.access-map > iframe {
+  width: 65%;
 }
-/*
-select input radio textarea
-*/
-.select {
-    border-radius: 5px;
-    padding: 10px;
-    border: 1px solid;
-    min-width: 100px;
+.access-mapinfo {
+  width: 35%;
+  padding: 15px;
 }
-.input {
-    border-radius: 5px;
-    padding: 10px;
-    border: 1px solid;
-    min-width: 500px;
+.access-maplogo {
+  font-size: 25px;
+  font-weight: bold;
 }
-.textarea{
-    border-radius: 5px;
-    padding: 10px;
-    border: 1px solid;
-    min-width: 500px;
-    min-height: 100px;
+.access-line {
+  border-color: #444;
 }
-/*
-form
-*/
-.form-table{
-    margin: 0 auto;
+.access-copy {
+  display: block;
+  text-align: center;
+}
+/* お問い合わせ */
+.inquiry {
+  background-color: #eeeeee;
+  color: #000;
+  text-align: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.inquiry-title {
+  font-size: 40px;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+.inquiry-body {
+  font-size: 20px;
+  margin: auto;
+  text-align: left;
+}
+.inquiry-body ul {
+  width: fit-content;
+  margin: auto;
 }
 /* ボタン */
-.form-button a {
-    background: #6bb6ff;
-    border-radius: 3px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px auto;
-    max-width: 240px;
-    padding: 20px;
-    color: #003067;
-    transition: 0.3s ease-in-out;
-    font-weight: 600;
-    border: 2px solid #000;
-    z-index: 1;
-    border-radius: 5px;
+a.form-button {
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  width: 250px;
+  margin: auto;
+  padding: 1rem 4rem;
+  font-weight: bold;
+  border: 2px solid #27acd9;
+  color: #27acd9;
+  border-radius: 100vh;
+  transition: 0.5s;
 }
-.form-button a:before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: #6bb6ff;
-    z-index: -1;
-    border: 2px solid #000;
-    border-radius: 5px;
+a.form-button:hover {
+  color: #fff;
+  background: #27acd9;
 }
-.form-button a:after {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    content: '';
-    -webkit-transition: all .3s;
-    transition: all .3s;
-    -webkit-transform: translate3d(0,0.40rem,-1rem);
-    transform: translate3d(0,0.40rem,-1rem);
-    border: 2px solid #000;
-    border-radius: inherit;
-    background: #2b7fde;
-    -webkit-box-shadow: 0 0.6rem 0 0 rgb(0 0 0 / 20%);
-    box-shadow: 0 0.4rem 0 0 rgb(0 0 0 / 20%);
-    z-index: -2;
-}
-.form-button a i {
-    position: absolute;
-    right: 9px;
-}
-.form-button a:hover {
-    transform: translate3d(0,0.2rem,-1rem);
-}
-.form-button a:hover:after {
-    transform: translate3d(0,0.2rem,-1rem);
-    box-shadow: 0 0.2rem 0 0 rgb(0 0 0 / 20%);
-}
-.form-table th {
-padding: 10px;
-text-align: left;
-}
-.form-table td {
-    padding: 10px;
-    text-align: left;
-    }
 
-/* 
-footer
-*/
-.footer{    
-background-color: grey;;
-color: #fff;
+.access a {
+  text-decoration: none;
+  color: white;
 }
-.footer-title{
-    font-size: 40px;
-    font-weight: bold;
+a:hover {
+  border-bottom: 2px solid white;
+}
+
+p {
+  margin: 0;
+}
+table {
+  border-collapse: collapse;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  font-family: "Noto Serif JP", serif;
+}
+
+.animation-container {
+  font-size: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#actual-content {
+  text-align: center;
+  font-size: 18px;
+  display: none;
+}
+@media screen and (max-width: 1400px) {
+  .homeguide {
+    font-size: 18px;
+  }
+  .homeguide li {
+    padding-top: 10px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .homeguide {
+    font-size: 15px;
+  }
+  .homeguide li {
+    padding-top: 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* header */
+  .header-link {
+    background-color: #0c2c4d;
     text-align: center;
-}
-.footer-map{
+    padding: 10px;
+    font-size: large;
+    display: none;
+  }
+  header.fixed {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 0;
+  }
+  .header-link a {
+    color: #fff;
+  }
+  .header-link ul {
+    list-style: none;
     margin: 0;
-    padding: 40px 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.footer-map > iframe{
-    width: 65%;
-}
-.footer-mapinfo{
-    width: 35%;
-    padding: 15px;
-}
-.footer-maplogo{
-    font-size: 25px;
-    font-weight: bold;
-}
-.footer-mapaddress{
-font-style: normal;
-}      
-.footer-mapaddress > a {
-color: #fff;
-}
-.footer-line{
-    border-color: #444;
-}
-.footer-copy{
+    padding: 0;
+  }
+  .header-link li {
+    display: block;
+    margin-right: 20px;
+  }
+  .header-honma {
+    max-width: auto;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
     display: block;
     text-align: center;
+  }
+  .header-left {
+    width: 100%;
+    margin-top: 0px;
+    padding: 0px 20px;
+  }
+  .header-right {
+    width: 100%;
+    padding: 0;
+  }
+  .red-text {
+    color: red;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  .blue-text {
+    color: #365676;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .bule-small-text {
+    color: #365676;
+    font-size: 15px;
+  }
+  .bold-text {
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .small-text {
+    font-size: 13px;
+  }
+  /* ハンバーガーメニュー */
+
+  /* home */
+  .home {
+    padding: 10px;
+    background-color: #365676;
+    color: #fff;
+  }
+  .homeheader {
+    font-size: 25px;
+  }
+  .homebody {
+    display: block;
+  }
+  .homeguide {
+    width: 100%;
+    font-size: 15px;
+  }
+  .homeguide ul {
+    width: fit-content;
+    margin: 0 10px 0 0;
+  }
+  .homeguide li {
+    padding-top: 10px;
+  }
+  .homeimg {
+    width: 100%;
+  }
+  .calendar table {
+    width: fit-content;
+  }
+  .calendar-sub {
+    font-size: 15px;
+  }
+  .calendar-sub p {
+    font-size: 13px;
+    margin: 0 0 0 20px;
+  }
+  .google-cal iframe {
+    height: 400px;
+    width: 100%;
+  }
+  .access-map {
+    margin: 0;
+    padding: 15px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+  }
+  .access-map > iframe {
+    width: 100%;
+    height: 200px;
+  }
+  .access-mapinfo {
+    width: 100%;
+  }
+  .access-mapaddress {
+    font-size: 17px;
+  }
+  .inquiry-body {
+    font-size: 15px;
+  }
 }
